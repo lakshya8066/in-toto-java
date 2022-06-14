@@ -28,8 +28,8 @@ public interface JSONEncoder {
    * @return A canonicalized String
    */
   static String canonicalizeString(String src) {
-    String pattern = "([\\\\\"])";
-    return String.format("\"%s\"", src.replaceAll(pattern, "\\\\$1"));
+    //String pattern = "([\\\\\"])";
+    return String.format("\"%s\"", src.replace("\\", "\\\\").replace("\"","\\\""));
   }
 
   /**
